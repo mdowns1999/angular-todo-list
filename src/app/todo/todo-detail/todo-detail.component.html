@@ -1,1 +1,31 @@
-<p>todo-detail works!</p>
+<div class="panel panel-default todo-detail-box" xmlns="http://www.w3.org/1999/html">
+    <div class="panel-heading">
+      <div class="row detail-heading">
+        <h2 class="title margin-left-right">{{todo?.name}}</h2>
+      </div>
+    </div>
+    <div class="panel-body">
+      <p>Category: {{todo.type}}</p>
+      <p>Description: {{todo.description}}</p>
+      <p *ngIf="todo.completed === false">Status: Not Completed</p>
+
+      <div class="row pull-right btn-margin-left-right">
+        <a class="btn btn-success">Complete</a>
+        <a class="btn btn-info" [routerLink]="['edit']" >Edit</a>
+        <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="pad-left-right">
+    <div class="row">
+      <label>Description:</label>
+      <span class="label-value">DESCRIPTION</span>
+    </div>
+    <br>
+    <div class="row">
+      <label>URL:</label>
+      <span class="label-value">URL</span>
+    </div>
+  </div> -->

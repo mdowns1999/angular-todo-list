@@ -13,6 +13,8 @@ import { TodoEditComponent } from './todo/todo-edit/todo-edit.component';
 import { CompletedComponent } from './completed/completed.component';
 import { CompletedListComponent } from './completed/completed-list/completed-list.component';
 import { FormsModule } from '@angular/forms';
+import { CompletedItemComponent } from './completed/completed-item/completed-item.component';
+import { CompletedDetailComponent } from './completed/completed-detail/completed-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     TodoDetailComponent,
     TodoEditComponent,
     CompletedComponent,
-    CompletedListComponent
+    CompletedListComponent,
+    CompletedItemComponent,
+    CompletedDetailComponent
   ],
   imports: [
     BrowserModule,
