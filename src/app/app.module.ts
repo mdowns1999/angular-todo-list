@@ -15,6 +15,7 @@ import { CompletedListComponent } from './completed/completed-list/completed-lis
 import { FormsModule } from '@angular/forms';
 import { CompletedItemComponent } from './completed/completed-item/completed-item.component';
 import { CompletedDetailComponent } from './completed/completed-detail/completed-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CompletedDetailComponent } from './completed/completed-detail/completed
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,4 +30,10 @@ export class TodoDetailComponent implements OnInit {
     this.todoService.deleteTodoItem(this.todo);
     this.router.navigateByUrl('/todoList');
   }
+
+  markComplete(){
+    if(this.todo.completed === false){
+      this.todo.completed = true;
+    }
+  }
 }

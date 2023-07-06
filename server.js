@@ -5,12 +5,11 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var mongoose = require('mongoose');
 
 // establish a connection to the mongo database mongodb://localhost:27017
 mongoose
-  .connect("mongodb://127.0.0.1:27017/app", { useNewUrlParser: true })
+  .connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Connection failed: " + err));
   
@@ -52,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'dist/todo-list')));
 
 // Tell express to map the default route ('/') to the index route
 app.use('/', index);
-app.use('/todo', todoRoutes);
+app.use('/todos', todoRoutes);
 
 // Tell express to map all other non-defined routes back to the index page
 app.get('*', (req, res) => {
