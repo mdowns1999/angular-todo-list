@@ -56,7 +56,7 @@ router.get('/', (req, res, next) => {
         toDoItem.name = req.body.name,
         toDoItem.type = req.body.type,
         toDoItem.description = req.body.description,
-        toDoItem.completed = false
+        toDoItem.completed = req.body.completed
   
         ToDo.updateOne({ id: req.params.id }, toDoItem)
           .then(result => {

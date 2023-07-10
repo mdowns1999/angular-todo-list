@@ -7,9 +7,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
+//Get Enviroment Variables
+const dotenv = require("dotenv");
+dotenv.config();
+
 // establish a connection to the mongo database mongodb://localhost:27017
+//.connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
 mongoose
-  .connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
+ .connect("mongodb://127.0.0.1:27017/todoDB", { useNewUrlParser: true })
+  //.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Connection failed: " + err));
   

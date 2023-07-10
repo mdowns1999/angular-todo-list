@@ -57,10 +57,10 @@ export class TodoEditComponent implements OnInit {
       value.name,
       value.type,
       value.description,
-      value.completed
+      value.completed = false
       )
 
-      newItem.completed = false;
+
    
     if (this.editMode){
       this.todoService.updateTodoitem(this.originalItem, newItem);

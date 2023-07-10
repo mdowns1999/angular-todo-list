@@ -11,7 +11,8 @@
       <p *ngIf="todo.completed === true">Status: Completed</p>
 
       <div class="row pull-right btn-margin-left-right">
-        <a class="btn btn-success" (click)="markComplete()">Complete</a>
+        <a class="btn btn-success" (click)="updateStatus()" *ngIf="todo.completed === false">Complete</a>
+        <a class="btn btn-success" (click)="updateStatus()" *ngIf="todo.completed === true">Re-Add Task</a>
         <a class="btn btn-info" [routerLink]="['edit']" >Edit</a>
         <a class="btn btn-danger" (click)="onDelete()">Delete</a>
       </div>

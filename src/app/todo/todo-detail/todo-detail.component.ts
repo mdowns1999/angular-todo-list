@@ -31,9 +31,47 @@ export class TodoDetailComponent implements OnInit {
     this.router.navigateByUrl('/todoList');
   }
 
-  markComplete(){
+  updateStatus(){
+    let status;
     if(this.todo.completed === false){
-      this.todo.completed = true;
+      status = true;
     }
+    else{
+      status = false;
+    }
+
+    let newItem = new Todo(this.todo.id,
+      this.todo.name,
+      this.todo.type,
+      this.todo.description,
+      this.todo.completed = status
+)
+
+
+  this.todoService.updateTodoitem(this.todo, newItem);
+
+  this.router.navigate(['/todoList']);
+
   }
+
 }
+
+// let value = form.value // get values from form’s fields
+// let newItem = new Todo(value.id,
+//   value.name,
+//   value.type,
+//   value.description,
+//   value.completed
+//   )
+
+//   newItem.completed = false;
+
+// if (this.editMode){
+//   this.todoService.updateTodoitem(this.originalItem, newItem);
+// }
+ 
+// else {
+//   this.todoService.addTodoItem(newItem);
+// }
+
+// this.router.navigate(['/todoList']);

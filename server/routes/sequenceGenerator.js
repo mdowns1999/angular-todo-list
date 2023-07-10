@@ -7,6 +7,7 @@ function SequenceGenerator() {
   Sequence.findOne()
     .exec()
     .then((sequence) => {
+
       sequenceId = sequence._id;
       maxToDoId= sequence.maxToDoId;
     })

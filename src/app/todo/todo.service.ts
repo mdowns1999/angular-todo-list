@@ -30,7 +30,6 @@ export class TodoService {
       .subscribe(
         // success method
         (response) => {
-          console.log(response.ToDoItems)
           this.TodoList = response.ToDoItems.sort();
           this.maxToDoId = this.getMaxId();
           this.todoListChangedEvent.next(this.TodoList.slice());
@@ -66,7 +65,6 @@ export class TodoService {
       { headers: headers })
       .subscribe(
         (responseData) => {
-          console.log(responseData)
           // add new document to documents
           this.TodoList.push(responseData.todo);
           this.sortAndSend();
@@ -98,7 +96,10 @@ export class TodoService {
       .subscribe(
         (response: Response) => {
           console.log(this.TodoList[pos])
+          console.log(newTodoItem)
           this.TodoList[pos] = newTodoItem;
+          console.log('NEW')
+          console.log(this.TodoList[pos])
           this.sortAndSend();
         }
       );
@@ -114,7 +115,6 @@ export class TodoService {
         if (pos < 0) {
           return;
         }
-        console.log()
         // delete from database
         this.http.delete('http://localhost:3000/todos/' + todoItem.id)
           .subscribe(
